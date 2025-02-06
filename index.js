@@ -33,6 +33,11 @@ app.post('/message', (req, res) => {
   }
 })
 
+const options = {
+    key: fs.readFileSync(path.join(__dirname, 'privkey.pem')),
+    cert: fs.readFileSync(path.join(__dirname, 'fullchain.pem'))
+    };
+
 app.listen(3000, () => {    
     console.log('Servidor corriendo en http://localhost:3000');
 })
