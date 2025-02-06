@@ -41,6 +41,6 @@ const options = {
     cert: fs.readFileSync(path.join(__dirname, 'fullchain.pem'))
     };
 
-app.listen(3000, () => {    
-    console.log('Servidor corriendo en http://localhost:3000');
+https.createServer(options, app).listen(3000, () => {    
+    console.log('Servidor corriendo en https://dev2.cyberbunny.online:3000');
 })
