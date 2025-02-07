@@ -3,8 +3,10 @@ const fs = require('fs');
 const https = require('https');
 const http = require('http');
 const path = require('path');
+const cors = require('cors');
 const app = express();
 app.use(express.json());
+app.use(cors());
 const {getMessages, addMessage} = require('./database.js');
 
 const APIKEY = "123456";
