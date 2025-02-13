@@ -6,7 +6,7 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("/public"));
 app.use(cors());
 const {getMessages, addMessage} = require('./database.js');
 
@@ -23,7 +23,7 @@ app.get('/message', (req, res) => {
      return res.status(401).send('Unauthorized');
    }else if (apikey === APIKEY){
      res.json(getMessages());
-
+     return res.status(200).send('OK');
    }
 })
 
