@@ -6,6 +6,7 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 app.use(express.json());
+app.use(express.static("public"));
 app.use(cors());
 const {getMessages, addMessage} = require('./database.js');
 
@@ -20,8 +21,10 @@ app.get('/message', (req, res) => {
    const apikey = req.headers['apikey'];
    if (apikey !== APIKEY){
      return res.status(401).send('Unauthorized');
+   }else if (apikey === APIKEY){
+     res.json(getMessages());
+
    }
-   res.json(getMessages());
 })
 
 app.post('/message', (req, res) => {    
@@ -39,7 +42,7 @@ app.post('/message', (req, res) => {
   }
 })
 
-app.get('/testeo', (req, res) => {
+app.get('/mensa', (req, res) => {
   const objeto = {
       mensaje: "Hola, soy Javi"
   };
