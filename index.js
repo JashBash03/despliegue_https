@@ -20,7 +20,7 @@ app.get('/messages', (req, res) => {
    // Devolver mensajes alamacenados en la BBDD
    const apikey = req.headers['apikey'];
    if (apikey !== APIKEY){
-    res.json({ message: 'Hello, World!' });
+    res.json({ message: 'Hola, soy Javi' });
      return res.status(200).send('OK');
    }
 })
