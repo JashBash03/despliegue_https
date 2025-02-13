@@ -13,10 +13,10 @@ const {getMessages, addMessage} = require('./database.js');
 const APIKEY = "123456";
 
 app.get('/', (req, res) => {
-  res.send('Hola Mundo!');
+  res.json({ message: 'Hello, World!' });
 })
 
-app.get('/message', (req, res) => {    
+app.get('/messages', (req, res) => {    
    // Devolver mensajes alamacenados en la BBDD
    const apikey = req.headers['apikey'];
    if (apikey !== APIKEY){
@@ -27,7 +27,7 @@ app.get('/message', (req, res) => {
    }
 })
 
-app.post('/message', (req, res) => {    
+app.post('/messages', (req, res) => {    
    // Guardar mensajes en la BBDD
    const apikey = req.headers['apikey'];
   if (apikey !== APIKEY) {
