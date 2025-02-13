@@ -10,40 +10,40 @@
         <h1>Test</h1>
     </div>
     <script>
-        fetch('http://dev1.cyberbunny.online:3000')
-        .then(response => response.json())
+        fetch('dev1.cyberbunny.online:3000')
+        .then(response => response.text())
         .then(data => {
             console.log(data)
             const p = document.createElement('p').innerHTML = data;
             document.querySelector("content").appendChild(p)
         });
 
-        fetch('http://dev2.cyberbunny.online:3000')
-        .then(response => response.json())
+        fetch('dev2.cyberbunny.online:3000')
+        .then(response => response.text())
         .then(data => {
             console.log(data)
             const p = document.createElement('p').innerHTML = data;
             document.querySelector("content").appendChild(p)
         });
 
-        fetch('http://dev3.cyberbunny.online:3000')
-        .then(response => response.json())
+        fetch('dev3.cyberbunny.online:3000')
+        .then(response => response.text())
         .then(data => {
             console.log(data)
             const p = document.createElement('p').innerHTML = data;
             document.querySelector("content").appendChild(p)
         });
 
-        fetch('http://dev4.cyberbunny.online:3000')
-        .then(response => response.json())
+        fetch('dev4.cyberbunny.online:3000')
+        .then(response => response.text())
         .then(data => {
             console.log(data)
             const p = document.createElement('p').innerHTML = data;
             document.querySelector("content").appendChild(p)
         });
     
-        fetch('http://dev5.cyberbunny.online:3000')
-        .then(response => response.json())
+        fetch('dev5.cyberbunny.online:3000')
+        .then(response => response.text())
         .then(data => {
             console.log(data)
             const p = document.createElement('p').innerHTML = data;
