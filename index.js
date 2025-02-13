@@ -39,6 +39,13 @@ app.post('/message', (req, res) => {
   }
 })
 
+app.get('/testeo', (req, res) => {
+  const objeto = {
+      mensaje: "Hola, soy Javi"
+  };
+  res.json(objeto);
+});
+
 if (process.env.NODE_ENV === 'production') {
   const options = {
     key: fs.readFileSync(path.join(__dirname, 'privkey.pem')),
